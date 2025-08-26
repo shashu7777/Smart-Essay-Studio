@@ -1,0 +1,172 @@
+/* ========== Design Tokens ========== */
+:root{
+  --bg: #0b0d10;
+  --surface: #111418;
+  --accent: #7c5cff;
+  --accent-2: #22c55e;
+  --text: #e6eaf0;
+  --muted: #9aa3af;
+  --ring: #7c5cff55;
+  --shadow: 0 10px 25px rgba(0,0,0,.35);
+}
+/* Light theme (when user clicks toggle) */
+:root[data-theme="light"] {
+  --bg: #f6f7fb;
+  --surface: #ffffff;
+  --text: #0b0d10;
+  --muted: #5b6573;
+  --ring: #7c5cff55;
+}
+
+
+@media (prefers-color-scheme: light){
+  :root{
+    --bg: #f6f7fb;
+    --surface: #ffffff;
+    --text: #0b0d10;
+    --muted: #5b6573;
+    --ring: #7c5cff55;
+  }
+}
+
+*{ box-sizing: border-box; }
+html, body { height: 100%; }
+body{
+  margin: 0;
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, 'Helvetica Neue', Arial, 'Noto Sans', 'Apple Color Emoji','Segoe UI Emoji','Segoe UI Symbol';
+  background: radial-gradient(1200px 800px at 80% -10%, #2b2f45 0%, transparent 55%) , var(--bg);
+  color: var(--text);
+  line-height: 1.5;
+}
+
+/* Header */
+.site-header{
+  position: sticky; top: 0; z-index: 10;
+  backdrop-filter: saturate(1.2) blur(8px);
+  background: color-mix(in oklab, var(--bg), transparent 15%);
+  border-bottom: 1px solid color-mix(in oklab, var(--text), transparent 90%);
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 14px 20px;
+}
+.brand{ display: flex; gap: 10px; align-items: center; }
+.brand .logo{ width: 36px; height: 36px; display: grid; place-items: center; border-radius: 12px; background: color-mix(in oklab, var(--accent), black 25%); box-shadow: var(--shadow); }
+.brand h1{ font-size: 18px; margin: 0; letter-spacing:.3px; font-weight: 700; }
+
+.container{ max-width: 980px; margin: 40px auto; padding: 0 16px; }
+.card{
+  background: linear-gradient(180deg, color-mix(in oklab, var(--surface), black 4%), color-mix(in oklab, var(--surface), black 8%));
+  border: 1px solid color-mix(in oklab, var(--text), transparent 90%);
+  border-radius: 20px;
+  padding: 24px;
+  box-shadow: var(--shadow);
+}
+
+/* Fields */
+.field{ margin-bottom: 20px; }
+.label{ display:block; font-weight: 700; margin-bottom: 8px; }
+.input, .textarea{
+  width: 100%;
+  background: color-mix(in oklab, var(--surface), black 10%);
+  color: var(--text);
+  border: 1px solid transparent;
+  border-radius: 14px;
+  padding: 14px 16px;
+  outline: none;
+  transition: box-shadow .2s ease, border-color .2s ease, transform .04s ease;
+}
+.input:focus, .textarea:focus{
+  border-color: var(--accent);
+  box-shadow: 0 0 0 4px var(--ring);
+}
+.input::placeholder, .textarea::placeholder{ color: var(--muted); }
+
+.textarea{
+  min-height: 320px;
+  resize: vertical;
+  line-height: 1.65;
+}
+
+.hint, .stats{
+  margin-top: 8px;
+  color: var(--muted);
+  font-size: 13px;
+  display: flex; gap: 10px; align-items: center;
+}
+
+/* Actions */
+.actions{
+  display: flex; align-items: center; gap: 10px; margin-top: 8px;
+}
+.btn, .ghost-btn{
+  border: 1px solid color-mix(in oklab, var(--text), transparent 85%);
+  background: linear-gradient(180deg, var(--accent), color-mix(in oklab, var(--accent), black 12%));
+  color: white; font-weight: 700;
+  padding: 12px 18px;
+  border-radius: 14px; cursor: pointer;
+  box-shadow: var(--shadow);
+  transition: transform .06s ease, filter .2s ease;
+}
+.btn:active{ transform: translateY(1px) }
+.ghost-btn{
+  background: transparent;
+  color: var(--text);
+  border-radius: 12px;
+  padding: 10px 14px;
+  box-shadow: none;
+}
+.ghost-btn:hover{ background: color-mix(in oklab, var(--text), transparent 92%); }
+
+.autosave{
+  margin-left: auto; font-size: 12px;
+  opacity: 0; transform: translateY(-4px);
+  transition: opacity .3s ease, transform .3s ease;
+  color: var(--accent-2);
+}
+
+/* Footer */
+.site-footer{ color: var(--muted); text-align: center; font-size: 12px; padding: 24px; }
+kbd{ background: color-mix(in oklab, var(--text), transparent 90%); border: 1px solid color-mix(in oklab, var(--text), transparent 80%); border-radius: 6px; padding: 2px 6px; }
+
+/* Responsive tweaks */
+@media (max-width: 640px){
+  .container{ margin: 20px auto; }
+  .textarea{ min-height: 240px; }
+}
+
+
+.topic-row {
+  display: flex;
+  gap: 10px;
+}
+
+.small-btn {
+  padding: 5px 10px;
+  font-size: 14px;
+}
+
+
+.result {
+  margin-top: 20px;
+  background: linear-gradient(180deg, color-mix(in oklab, var(--surface), black 2%), color-mix(in oklab, var(--surface), black 6%));
+  border-left: 6px solid var(--accent);
+}
+
+#scoreBox {
+  font-size: 20px;
+  font-weight: 700;
+  margin-bottom: 12px;
+  color: var(--accent-2);
+}
+
+#feedbackBox {
+  line-height: 1.6;
+}
+
+#feedbackBox strong {
+  display: block;
+  margin-top: 10px;
+  color: var(--accent);
+}
+.hidden {
+  display: none;
+}

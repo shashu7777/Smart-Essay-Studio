@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Essay Studio — AI Topic Generator</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="brand">
+      <div class="logo" aria-hidden="true">✍️</div>
+      <h1>Smart Essay Studio</h1>
+    </div>
+    <button id="themeToggle" class="ghost-btn" title="Toggle theme">🌗</button>
+  </header>
+
+  <main class="container">
+    <section class="card">
+      <form id="essayForm" novalidate>
+        <div class="field">
+          <label for="topic" class="label">Topic / Prompt</label>
+          <div class="topic-row">
+            <input id="topic" name="topic" type="text" class="input" placeholder="Click 'Generate Topic'" maxlength="160" readonly />
+            <button type="button" id="generateBtn" class="btn small-btn">Generate Topic</button>
+          </div>
+          <div class="hint">
+            <span id="topicCount">0 / 160</span>
+          </div>
+        </div>
+
+        <div class="field">
+          <label for="essay" class="label">Your Essay</label>
+          <textarea id="essay" name="essay" class="textarea" placeholder="Start writing here..." rows="14"></textarea>
+          <div class="stats">
+            <span id="wordCount">0 words</span>
+            <span aria-hidden="true">•</span>
+            <span id="charCount">0 characters</span>
+            <span aria-hidden="true">•</span>
+            <span id="readTime">~0 min read</span>
+          </div>
+        </div>
+
+        <div class="actions">
+          <button type="submit" class="btn">Submit</button>
+          <button type="button" id="clearBtn" class="ghost-btn">Clear</button>
+          <div class="autosave" id="saveBadge">Saved</div>
+        </div>
+      </form>
+    </section>
+
+     <section id="resultCard" class="card result hidden">
+    <h2>Evaluation Result</h2>
+    <div id="scoreBox"></div>
+    <div id="feedbackBox"></div>
+  </section>
+  
+  </main>
+
+  <footer class="site-footer">
+    <p>Tip: Your work autosaves locally. Press <kbd>Ctrl</kbd>/<kbd>Cmd</kbd> + <kbd>S</kbd> to save draft.</p>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
