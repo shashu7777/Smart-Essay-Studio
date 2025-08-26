@@ -53,7 +53,6 @@ python app.py
 You can include screenshots or demo images of your project here.  
 To add an image inside the `README.md`, place your images inside a folder (commonly `/assets` or `/images`) and reference them like this:  
 
-```markdown
 ![Homepage Screenshot](image1.png)
 ![Essay Writing Example](image2.png)
 
