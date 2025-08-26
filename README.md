@@ -32,3 +32,18 @@ cd smart-essay-studio
 ```
 
 ### 2. Clone the Repository 
+```bash
+python -m venv venv
+```
+### 3. Install Dependencies
+```bash
+pip install -r requirements.txt
+```
+### 4. Set up Environment Variables
+```bash
+GOOGLE_API_KEY=your_api_key_here
+```
+### 5. Run the Server
+```bash
+python app.py
+```
