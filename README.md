@@ -50,10 +50,9 @@ python app.py
 
 ## 🖼️ Project Screenshots  
 
-You can include screenshots or demo images of your project here.  
-To add an image inside the `README.md`, place your images inside a folder (commonly `/assets` or `/images`) and reference them like this:  
+Screen shots of the pages 
 
-![Homepage Screenshot](image1.png)
-![Essay Writing Example](image2.png)
+![Homepage Screenshot](image2.png)
+![Essay Writing Example](image1.png)
 
 
