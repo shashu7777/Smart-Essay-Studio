@@ -56,3 +56,5 @@ To add an image inside the `README.md`, place your images inside a folder (commo
 ```markdown
 ![Homepage Screenshot](image1.png)
 ![Essay Writing Example](image2.png)
+
+
