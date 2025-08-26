@@ -11,7 +11,7 @@ It helps users generate essay topics, write essays, and receive AI-powered feedb
 - 🔍 Essay analysis with **suggestions & improvement codes**  
 - 🔄 Iterative workflow → write → analyze → improve  
 - 🔑 API key security with `.env` file  
-- 📂 Custom mechanism to avoid repeated topics across server restarts  
+- 📂 Persistent topic tracking: Prevents repeating topics by storing previously generated ones in an external file.
 
 ---
 
@@ -27,7 +27,7 @@ It helps users generate essay topics, write essays, and receive AI-powered feedb
 
 ### 1. Clone the Repository  
 ```bash
-git clone https://github.com/your-username/smart-essay-studio.git
+git clone https://github.com/shashu7777/Smart-Essay-Studio.git
 cd smart-essay-studio
 ```
 
@@ -47,3 +47,12 @@ GOOGLE_API_KEY=your_api_key_here
 ```bash
 python app.py
 ```
+
+## 🖼️ Project Screenshots  
+
+You can include screenshots or demo images of your project here.  
+To add an image inside the `README.md`, place your images inside a folder (commonly `/assets` or `/images`) and reference them like this:  
+
+```markdown
+![Homepage Screenshot](images/homepage.png)
+![Essay Writing Example](images/essay-writing.png)
